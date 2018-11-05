@@ -1,5 +1,5 @@
 FROM phusion/baseimage
-MAINTAINER Holger Schinzel <holger@dash.org>
+MAINTAINER duyawei <1684228697@qq.com>
 
 ARG USER_ID
 ARG GROUP_ID
@@ -14,7 +14,7 @@ RUN useradd -u ${USER_ID} -g dash -s /bin/bash -m -d /dash dash
 
 RUN chown dash:dash -R /dash
 
-ADD https://github.com/dashpay/dash/releases/download/v0.12.3.2/dashcore-0.12.3.2-x86_64-linux-gnu.tar.gz /tmp/
+ADD https://github.com/akhavr/electrum-dash/releases/download/3.0.6.3/Electrum-DASH-3.0.6.3.tar.gz /tmp/
 RUN tar -xvf /tmp/dashcore-*.tar.gz -C /tmp/
 RUN cp /tmp/dashcore*/bin/*  /usr/local/bin
 RUN rm -rf /tmp/dashcore*
